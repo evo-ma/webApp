@@ -19,7 +19,7 @@ export default function AIShowcase() {
   return (
     <section className="section border-t border-white/[0.04]">
       <div className="container-xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           <FadeIn className="lg:sticky lg:top-28 mb-8 lg:mb-0">
             <div className="section-tag">{t('nav.ai')}</div>

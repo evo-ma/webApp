@@ -21,7 +21,7 @@ export default function DeploymentSteps() {
   return (
     <section className="section border-t border-white/[0.04] bg-white/[0.01]">
       <div className="container-xl">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* Steps */}
           <div>

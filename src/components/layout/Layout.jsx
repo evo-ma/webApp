@@ -13,11 +13,11 @@ export default function Layout() {
       {/* Animated star canvas - fixed behind everything */}
       <canvas id="stars-canvas" aria-hidden="true" />
 
-      {/* Global nebula blobs */}
-      <div aria-hidden="true">
-        <div className="nebula w-[600px] h-[600px] bg-gradient-radial from-orange/6 to-transparent top-[-200px] right-[-200px]" />
-        <div className="nebula w-[500px] h-[500px] bg-gradient-radial from-navy/20 to-transparent bottom-0 left-[-150px]" />
-        <div className="nebula w-[400px] h-[400px] bg-gradient-radial from-orange/4 to-transparent top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2" />
+      {/* Global nebula blobs — clamped so they never cause horizontal overflow */}
+      <div aria-hidden="true" className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="nebula w-[min(600px,100vw)] h-[min(600px,100vw)] bg-gradient-radial from-orange/6 to-transparent top-[-200px] right-[-200px]" />
+        <div className="nebula w-[min(500px,80vw)] h-[min(500px,80vw)] bg-gradient-radial from-navy/20 to-transparent bottom-0 left-[-150px]" />
+        <div className="nebula w-[min(400px,70vw)] h-[min(400px,70vw)] bg-gradient-radial from-orange/4 to-transparent top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2" />
       </div>
 
       <Navbar />

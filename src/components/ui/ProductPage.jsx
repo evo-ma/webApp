@@ -116,7 +116,7 @@ export default function ProductPage({
             </Link>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left */}
             <div>
               <motion.div
@@ -227,7 +227,7 @@ export default function ProductPage({
       {useCases.length > 0 && (
         <section className="section border-t border-white/[0.04]">
           <div className="container-xl">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
                 <div className={`section-tag ${ac.tag}`}>{t('common.use_cases')}</div>
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4 leading-tight tracking-tight">

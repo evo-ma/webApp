@@ -109,7 +109,7 @@ export default function DemoPage() {
           ))}
         </div>
 
-        <div className="card overflow-hidden" style={{ minHeight: 380 }}>
+        <div className="card overflow-hidden" style={{ minHeight: 'auto' }}>
           <AnimatePresence mode="wait" custom={dir}>
             <motion.div key={step} custom={dir} variants={slideVariants} initial="enter" animate="center" exit="exit"
               transition={{ duration: 0.28, ease: 'easeInOut' }} className="p-5 sm:p-8">

@@ -6,7 +6,9 @@ import './index.css'
 export default function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
+      <div style={{ overflow: 'hidden', width: '100%', maxWidth: '100vw' }}>
+        <AppRouter />
+      </div>
     </BrowserRouter>
   )
 }

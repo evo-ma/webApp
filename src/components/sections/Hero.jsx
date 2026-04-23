@@ -13,9 +13,9 @@ export default function Hero() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative z-10 min-h-[100svh] flex items-center pt-20 pb-10 px-4 sm:px-6 md:px-10">
+    <section className="relative z-10 flex items-center pt-20 pb-10 px-4 sm:px-6 md:px-10">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left — copy */}
           <div>
@@ -40,25 +40,25 @@ export default function Hero() {
             {/* Subtitle */}
             <motion.p
               {...fadeUp(0.3)}
-              className="text-white/45 text-lg leading-relaxed max-w-[480px] mb-10"
+              className="text-white/45 text-base sm:text-lg leading-relaxed max-w-full sm:max-w-[480px] mb-8"
             >
               {t('home.subtitle')}
             </motion.p>
 
             {/* CTAs */}
-            <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-3 mb-10">
-              <Link to="/demo" className="btn-primary text-base px-7 py-3.5">
+            <motion.div {...fadeUp(0.4)} className="flex flex-col sm:flex-row gap-3 mb-8">
+              <Link to="/demo" className="btn-primary text-sm sm:text-base px-5 sm:px-7 py-3 sm:py-3.5 justify-center sm:justify-start">
                 <Calendar size={17} />
                 {t('home.cta_demo')}
               </Link>
-              <Link to="/solutions" className="btn-secondary text-base px-7 py-3.5">
+              <Link to="/solutions" className="btn-secondary text-sm sm:text-base px-5 sm:px-7 py-3 sm:py-3.5 justify-center sm:justify-start">
                 {t('home.cta_solutions')}
                 <ArrowRight size={15} />
               </Link>
             </motion.div>
 
             {/* Trust line */}
-            <motion.div {...fadeUp(0.5)} className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <motion.div {...fadeUp(0.5)} className="flex flex-wrap items-center gap-x-4 gap-y-2">
               {[
                 t('home.trust1'),
                 t('home.trust2'),

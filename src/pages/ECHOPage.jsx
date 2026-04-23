@@ -231,7 +231,7 @@ export default function ECHOPage() {
               </span>
             </div>
 
-            <div className="grid lg:grid-cols-[1fr_400px]">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px]">
 
               {/* Left */}
               <div className="p-5 sm:p-8 md:p-12 lg:border-r border-white/[0.06] flex flex-col justify-between gap-6 sm:gap-8">

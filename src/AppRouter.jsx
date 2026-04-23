@@ -40,7 +40,7 @@ function ProduitsIndexPage() {
         <p className="text-white/40 text-lg mb-14 max-w-xl">{t('home.solutions_sub')}</p>
 
         <h2 className="font-display font-bold text-xl text-white/70 mb-4">{t('nav.telephony')}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10">
           {TELEPHONY.map(({ key, path, icon }) => {
             const Icon = TEL_ICONS[icon]
             return (
