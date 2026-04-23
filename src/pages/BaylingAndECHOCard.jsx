@@ -75,7 +75,7 @@ export function ECHOCard() {
             {/* Top accent */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange to-transparent" />
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-start lg:items-center p-5 sm:p-8 md:p-10">
+            <div className="relative z-10 grid lg:grid-cols-[1fr_auto] gap-6 items-start lg:items-center p-5 sm:p-8 md:p-10">
               <div className="grid grid-cols-[auto_1fr] gap-4 sm:gap-6 items-start">
                 {/* Logo mark */}
                 <div className="w-16 h-16 rounded-2xl bg-orange/10 border border-orange/25 flex items-center justify-center flex-shrink-0">
@@ -112,7 +112,7 @@ export function ECHOCard() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {['Microsoft Teams', 'AudioCodes SBC', 'ISO 27001', 't('echo.hosted_badge')].map(tag => (
+                   {['Microsoft Teams', 'AudioCodes SBC', 'ISO 27001', 'Hébergé au Maroc'].map(tag => (
                       <span key={tag} className={`text-xs px-2.5 py-1 rounded-full border font-medium ${
                         ['Microsoft Teams', 'AudioCodes SBC'].includes(tag)
                           ? 'bg-orange/10 border-orange/25 text-orange'
