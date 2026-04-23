@@ -47,46 +47,50 @@ export default function ProductPage({
 
   useSEO(name, `${desc} — ${short} | EVO Technologies`)
 
-  const ACCENT = {
-  orange: {
-    glow:  'from-orange/8',
-    badge: 'bg-orange/10 border-orange/25 text-orange',
-    dot:   'bg-orange',
-    tag:   'text-orange',
-    icon:  'bg-orange/5 border-orange/20 text-orange',
-    num:   'bg-orange/10 border-orange/25 text-orange',
-    step:  'from-orange/30',
-  },
-  violet: {
-    glow:  'from-violet-500/8',
-    badge: 'bg-violet-500/10 border-violet-500/25 text-violet-400',
-    dot:   'bg-violet-400',
-    tag:   'text-violet-400',
-    icon:  'bg-violet-500/5 border-violet-500/20 text-violet-400',
-    num:   'bg-violet-500/10 border-violet-500/25 text-violet-400',
-    step:  'from-violet-500/30',
-  },
-  sky: {
-    glow:  'from-sky-500/8',
-    badge: 'bg-sky-500/10 border-sky-500/25 text-sky-400',
-    dot:   'bg-sky-400',
-    tag:   'text-sky-400',
-    icon:  'bg-sky-500/5 border-sky-500/20 text-sky-400',
-    num:   'bg-sky-500/10 border-sky-500/25 text-sky-400',
-    step:  'from-sky-500/30',
-  },
-  emerald: {
-    glow:  'from-emerald-500/8',
-    badge: 'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
-    dot:   'bg-emerald-400',
-    tag:   'text-emerald-400',
-    icon:  'bg-emerald-500/5 border-emerald-500/20 text-emerald-400',
-    num:   'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
-    step:  'from-emerald-500/30',
-  },
-}
+  const accentClasses = {
+    orange: {
+      badge:   'bg-orange/10 border-orange/25 text-orange',
+      dot:     'bg-orange',
+      tag:     'text-orange',
+      tagLine: 'bg-orange',
+      icon:    'bg-orange/5 border-orange/20 text-orange',
+      glow:    'from-orange/8',
+      num:     'bg-orange/10 border-orange/25 text-orange',
+      step:    'from-orange/30',
+    },
+    violet: {
+      badge:   'bg-violet-500/10 border-violet-500/25 text-violet-400',
+      dot:     'bg-violet-400',
+      tag:     'text-violet-400',
+      tagLine: 'bg-violet-400',
+      icon:    'bg-violet-500/5 border-violet-500/20 text-violet-400',
+      glow:    'from-violet-500/8',
+      num:     'bg-violet-500/10 border-violet-500/25 text-violet-400',
+      step:    'from-violet-500/30',
+    },
+    sky: {
+      badge:   'bg-sky-500/10 border-sky-500/25 text-sky-400',
+      dot:     'bg-sky-400',
+      tag:     'text-sky-400',
+      tagLine: 'bg-sky-400',
+      icon:    'bg-sky-500/5 border-sky-500/20 text-sky-400',
+      glow:    'from-sky-500/8',
+      num:     'bg-sky-500/10 border-sky-500/25 text-sky-400',
+      step:    'from-sky-500/30',
+    },
+    emerald: {
+      badge:   'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
+      dot:     'bg-emerald-400',
+      tag:     'text-emerald-400',
+      tagLine: 'bg-emerald-400',
+      icon:    'bg-emerald-500/5 border-emerald-500/20 text-emerald-400',
+      glow:    'from-emerald-500/8',
+      num:     'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
+      step:    'from-emerald-500/30',
+    },
+  }[accentColor] || accentClasses
 
-const ac = ACCENT[accentColor] ?? ACCENT.orange
+  const ac = accentClasses[accentColor] ?? accentClasses.orange
 
   return (
     <>
@@ -194,7 +198,7 @@ const ac = ACCENT[accentColor] ?? ACCENT.orange
               {t('common.features')}
             </div>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-12 max-w-2xl leading-tight tracking-tight">
-              Tout ce dont vous avez besoin
+              {t('product_page.features_title')}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -227,10 +231,10 @@ const ac = ACCENT[accentColor] ?? ACCENT.orange
               <div>
                 <div className={`section-tag ${ac.tag}`}>{t('common.use_cases')}</div>
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4 leading-tight tracking-tight">
-                  Idéal pour
+                  {t('product_page.ideal_for')}
                 </h2>
                 <p className="text-white/40 leading-relaxed">
-                  {name} s'adapte à tous les secteurs d'activité et toutes les tailles d'entreprise.
+                  {name} {t('product_page.ideal_desc_suffix')}
                 </p>
               </div>
               <ul className="space-y-3">
@@ -304,7 +308,7 @@ function DefaultHeroCard({ name, Icon, ac }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs text-green-400 bg-green-500/10 border border-green-500/15 rounded-full px-3 py-1">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          Actif & opérationnel
+          {t('product_page.active')}
         </div>
       </div>
     </div>

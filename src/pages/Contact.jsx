@@ -42,10 +42,10 @@ export default function ContactPage() {
         >
           <div className="section-tag">{t('nav.contact')}</div>
           <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4 leading-tight tracking-tight">
-            Parlons de votre projet
+            {t('contact.title')}
           </h1>
           <p className="text-white/40 text-lg max-w-xl leading-relaxed">
-            Notre équipe vous répond sous 24h et vous prépare une démonstration live sur votre propre environnement Teams.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -60,16 +60,16 @@ export default function ContactPage() {
             {sent ? (
               <div className="card p-10 text-center">
                 <CheckCircle2 size={48} className="text-green-400 mx-auto mb-4" />
-                <h3 className="font-display font-bold text-xl text-white mb-2">Message envoyé !</h3>
-                <p className="text-white/45 text-sm">Notre équipe vous contacte dans les 24h.</p>
+                <h3 className="font-display font-bold text-xl text-white mb-2">{t('contact.sent_title')}</h3>
+                <p className="text-white/45 text-sm">{t('contact.sent_sub')}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="card p-8 space-y-5">
                 {/* Type selector */}
                 <div className="flex gap-2 p-1 bg-white/[0.03] rounded-xl border border-white/[0.06]">
                   {[
-                    { val: 'demo',  label: 'Demander une démo',  icon: Calendar },
-                    { val: 'quote', label: 'Demander un devis',  icon: Send },
+                    { val: 'demo',  label: t('contact.type_demo'),  icon: Calendar },
+                    { val: 'quote', label: t('contact.type_quote'), icon: Send },
                   ].map(({ val, label, icon: Icon }) => (
                     <button
                       key={val}
@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <FormField label="Votre message">
                   <textarea
                     rows={4}
-                    placeholder="Décrivez votre projet, votre secteur, votre nombre d'utilisateurs..."
+                    {...{placeholder: t('contact.msg_placeholder')}}
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                     className={`${inputClass} resize-none`}
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 </button>
 
                 <p className="text-xs text-white/25 text-center">
-                  En soumettant ce formulaire, vous acceptez d'être contacté par l'équipe EVO.
+                  {t('contact.consent')}
                 </p>
               </form>
             )}
@@ -163,7 +163,7 @@ export default function ContactPage() {
               { icon: Phone,   label: 'Téléphone', value: t('common.phone'),    href: 'tel:+212520999721' },
               { icon: Mail,    label: 'Email',     value: t('common.email'),    href: 'mailto:contact@evo.ma' },
               { icon: MapPin,  label: 'Adresse',   value: 'Casablanca, Maroc', href: null },
-              { icon: Clock,   label: 'Horaires',  value: 'Support 24h/7j',    href: null },
+              { icon: Clock,   label: t('contact.hours'),  value: t('contact.hours'),    href: null },
             ].map(({ icon: Icon, label, value, href }) => (
               <div key={label} className="card p-5 flex items-start gap-4">
                 <div className="feat-icon w-10 h-10 flex-shrink-0">
@@ -184,10 +184,10 @@ export default function ContactPage() {
               <div className="text-xs text-white/35 mb-3 uppercase tracking-wide font-semibold">Pourquoi EVO</div>
               <ul className="space-y-2">
                 {[
-                  'Réponse sous 24h garantie',
-                  'Démo live sur votre environnement',
-                  'Devis détaillé sans engagement',
-                  'Équipe basée à Casablanca',
+                  t('contact.trust1'),
+                  t('contact.trust2'),
+                  t('contact.trust3'),
+                  t('contact.trust4'),
                 ].map(item => (
                   <li key={item} className="flex items-center gap-2 text-sm text-white/50">
                     <CheckCircle2 size={12} className="text-orange flex-shrink-0" />

@@ -183,3 +183,56 @@
 [dir="rtl"] .section-tag::before {
   @apply ml-0 mr-0;
 }
+
+/* ── RTL — Arabic layout fixes ───────────────────────────────────────────── */
+
+/* Font: use a system Arabic font as fallback for better rendering */
+[dir="rtl"] body {
+  font-family: 'DM Sans', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* Section tag — flip the leading line to the right */
+[dir="rtl"] .section-tag::before {
+  margin-right: 0;
+  margin-left: 0.5rem;
+  order: 1;
+}
+
+/* Flip flex rows that should reverse in RTL */
+[dir="rtl"] .btn-ghost,
+[dir="rtl"] .btn-primary,
+[dir="rtl"] .btn-secondary {
+  flex-direction: row-reverse;
+}
+
+/* Stats strip — keep border on correct side */
+[dir="rtl"] .stat {
+  border-right: none;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+[dir="rtl"] .stat:last-child {
+  border-left: none;
+}
+
+/* Cards — align text right */
+[dir="rtl"] .card,
+[dir="rtl"] .pcard,
+[dir="rtl"] .feat {
+  text-align: right;
+}
+
+/* Deployment step connector — flip position */
+[dir="rtl"] .step-line {
+  left: auto;
+  right: 19px;
+}
+
+/* Mega menu — keep readable in RTL */
+[dir="rtl"] nav {
+  direction: rtl;
+}
+
+/* Footer links — right align */
+[dir="rtl"] .footer-contact a {
+  flex-direction: row-reverse;
+}

@@ -22,16 +22,16 @@ export function BaylingPage() {
         {/* Badge */}
         <span className="badge mb-6 inline-flex">
           <span className="badge-dot" />
-          En cours de développement
+          {t('bayling.badge')}
         </span>
 
         <h1 className="font-display font-black text-5xl md:text-6xl text-white tracking-tight mb-2">
           ECHO <span className="text-gradient">Bayling</span>
         </h1>
-        <p className="text-white/30 text-sm tracking-widest uppercase mb-6">La prochaine solution EVO</p>
+        <p className="text-white/30 text-sm tracking-widest uppercase mb-6">{t('bayling.subtitle')}</p>
 
         <p className="text-white/45 text-lg leading-relaxed mb-10">
-          Nous travaillons sur quelque chose de grand. ECHO Bayling sera bientôt disponible — restez connectés pour en être les premiers informés.
+          {t('bayling.desc')}
         </p>
 
         {/* Notify form placeholder */}
@@ -47,11 +47,11 @@ export function BaylingPage() {
               Me notifier
             </button>
           </div>
-          <p className="text-xs text-white/20 mt-2">Aucun spam. Désabonnement en un clic.</p>
+          <p className="text-xs text-white/20 mt-2">{t('common.no_spam')}</p>
         </div>
 
         <Link to="/solutions/echo" className="btn-ghost text-sm">
-          <ArrowLeft size={14} /> Voir ECHO
+          <ArrowLeft size={14} /> {t('bayling.see_echo')}
         </Link>
       </motion.div>
     </section>
@@ -95,7 +95,7 @@ export function ECHOCard() {
                       <span className="text-white">O</span>
                     </span>
                     <span className="text-[9px] font-bold tracking-widest uppercase bg-orange/15 border border-orange/25 text-orange px-2.5 py-1 rounded-full">
-                      Solution Phare
+                      {t('echo.flagship')}
                     </span>
                   </div>
 
@@ -107,11 +107,7 @@ export function ECHOCard() {
                   </p>
 
                   <p className="text-white/55 text-sm md:text-base leading-relaxed max-w-2xl">
-                    Un abonnement unique pour{' '}
-                    <span className="text-orange font-medium">téléphoner</span>,{' '}
-                    <span className="text-orange font-medium">collaborer</span> et{' '}
-                    <span className="text-orange font-medium">connecter</span> tous vos outils —
-                    hébergé dans nos datacenters au Maroc. Microsoft Teams + AudioCodes SBC + Email + Cloud, opéré 24/7 par nos équipes.
+                    {t('home.echo_card_desc')}
                   </p>
 
                   {/* Tags */}
@@ -130,7 +126,7 @@ export function ECHOCard() {
               {/* CTAs */}
               <div className="flex flex-row lg:flex-col gap-3 flex-shrink-0">
                 <Link to="/solutions/echo" className="btn-primary whitespace-nowrap">
-                  <ArrowRight size={15} /> Découvrir ECHO
+                  <ArrowRight size={15} /> {t('home.discover_echo')}
                 </Link>
                 <Link to="/demo" className="btn-secondary whitespace-nowrap">
                   <Calendar size={15} /> Démo

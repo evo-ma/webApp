@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useSEO } from '@/hooks/useSEO'
@@ -125,19 +126,20 @@ const BADGE_STYLES = {
 }
 
 // ── Why ECHO cards ────────────────────────────────────────────────────────────
-const WHY = [
-  { icon: Shield,  title: 'Souveraineté des données', desc: 'Hébergé dans nos datacenters au Maroc. Vos données ne quittent jamais le territoire national.' },
-  { icon: Zap,     title: 'Déploiement en 72h',        desc: 'De l\'audit à la mise en production en 3 jours. Notre équipe gère tout de A à Z.' },
-  { icon: Headset, title: 'Support local 24/7',         desc: 'Équipe EVO basée à Casablanca, disponible à toute heure. Pas de call center offshore.' },
-  { icon: Globe,   title: 'Multi-langues natif',        desc: 'Arabe, Français, Darija et Anglais. Notre plateforme parle la langue de vos clients.' },
-  { icon: Award,   title: 'Certifié Microsoft & AudioCodes', desc: 'Partenaire certifié Gold. Intégration native sans compromis sur la qualité voix.' },
-  { icon: Lock,    title: 'ISO 27001 · PCI DSS',        desc: 'Infrastructure conforme aux standards internationaux de sécurité et de confidentialité.' },
+const WHY_KEYS = [
+  { icon: Shield,  key: 'sovereignty' },
+  { icon: Zap,     key: 'speed'       },
+  { icon: Headset, key: 'support'     },
+  { icon: Globe,   key: 'lang'        },
+  { icon: Award,   key: 'certified'   },
+  { icon: Lock,    key: 'security'    },
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function ECHOPage() {
   useSEO('ECHO — Solution EVO', 'ECHO : l\'écosystème collaboratif complet hébergé au Maroc. Microsoft Teams, PBX Cloud, Email, Stockage — un abonnement, opéré par EVO.')
+  const { t } = useTranslation()
   const [activeFeature, setActiveFeature] = useState(null)
 
   return (
@@ -159,7 +161,7 @@ export default function ECHOPage() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.1 }}>
             <span className="badge mb-6 inline-flex">
               <span className="badge-dot" />
-              Hébergé au Maroc — Datacenter Tier III
+              {t('echo.hosted_badge')}
             </span>
           </motion.div>
 
@@ -206,7 +208,7 @@ export default function ECHOPage() {
               <Calendar size={16} /> Demander une démo
             </Link>
             <Link to="/contact" className="btn-secondary">
-              Détails & tarifs <ArrowRight size={15} />
+              {t('echo.details')} <ArrowRight size={15} />
             </Link>
           </motion.div>
         </div>
@@ -271,15 +273,15 @@ export default function ECHOPage() {
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <Link to="/demo" className="btn-primary"><Calendar size={15} /> Demander une démo</Link>
-                  <Link to="/contact" className="btn-secondary">Détails ECHO</Link>
+                  <Link to="/demo" className="btn-primary"><Calendar size={15} />{t('common.request_demo')}</Link>
+                  <Link to="/contact" className="btn-secondary">{t('echo.details_echo')}</Link>
                 </div>
               </div>
 
               {/* Right — feature list with tooltip */}
               <div className="p-6 md:p-8 relative">
                 <div className="text-[10px] font-bold tracking-widest uppercase text-white/20 mb-4 pb-3 border-b border-white/[0.06]">
-                  Inclus dans votre abonnement
+                  {t('echo.included')}
                 </div>
                 <div className="space-y-1">
                   {ECHO_FEATURES.map((feat, i) => (
@@ -322,12 +324,12 @@ export default function ECHOPage() {
       <section className="section border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-12">
-            <div className="section-tag">Suite complète</div>
+            <div className="section-tag">{t('echo.suite_tag')}</div>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight tracking-tight mb-3">
-              Tous nos produits <span className="text-gradient">hébergés localement</span>
+              {t('echo.suite_title')} <span className="text-gradient">{t('echo.suite_title2')}</span>
             </h2>
             <p className="text-white/40 text-lg max-w-xl leading-relaxed">
-              Chaque solution est hébergée dans nos datacenters au Maroc, opérée 24/7 par nos équipes certifiées.
+              {t('echo.suite_desc')}
             </p>
           </FadeIn>
 
@@ -395,17 +397,17 @@ export default function ECHOPage() {
       <section className="section border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="text-center max-w-2xl mx-auto mb-14">
-            <div className="section-tag justify-center">Pourquoi ECHO</div>
+            <div className="section-tag justify-center">{t('echo.why_tag')}</div>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight tracking-tight mb-4">
-              L'avantage <span className="text-gradient">EVO</span>
+              {t('echo.why_title')}
             </h2>
             <p className="text-white/40 leading-relaxed">
-              ECHO n'est pas un simple revendeur de licences Microsoft — c'est une solution opérée, hébergée et supportée par nos équipes au Maroc.
+              {t('echo.why_desc')}
             </p>
           </FadeIn>
 
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {WHY.map(({ icon: Icon, title, desc }) => (
+            {WHY_KEYS.map(({ icon: Icon, key }) => (
               <FadeInItem key={title}>
                 <div className="card card-hover p-7 group h-full">
                   <div className="feat-icon mb-5 group-hover:bg-orange/10 group-hover:border-orange/30 transition-all duration-300">
