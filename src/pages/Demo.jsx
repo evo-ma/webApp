@@ -69,7 +69,7 @@ export default function DemoPage() {
     return (
       <section className="relative z-10 min-h-screen flex items-center justify-center px-5">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}
-          className="card p-12 text-center max-w-md w-full">
+          className="card p-6 sm:p-12 text-center max-w-md w-full">
           <div className="w-16 h-16 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={32} className="text-green-400" />
           </div>
@@ -83,11 +83,11 @@ export default function DemoPage() {
   }
 
   return (
-    <section className="relative z-10 min-h-screen pt-24 pb-20 px-5 md:px-10">
+    <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 md:px-10">
       <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="text-center mb-12">
           <div className="section-tag justify-center">{t('demo.badge')}</div>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-3 leading-tight tracking-tight">{t('demo.title')}</h1>
+          <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-3 leading-tight tracking-tight">{t('demo.title')}</h1>
           <p className="text-white/40 text-base">{t('demo.subtitle')}</p>
         </motion.div>
 
@@ -118,7 +118,7 @@ export default function DemoPage() {
                 <div>
                   <h2 className="font-display font-bold text-xl text-white mb-1">{t('demo.step0_title')}</h2>
                   <p className="text-sm text-white/35 mb-6">{t('demo.step0_sub')}</p>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                     {PRODUCTS.map(({ id, icon: Icon, key }) => {
                       const selected = form.products.includes(id)
                       const ns = key in (t('solutions', { returnObjects: true }) || {}) ? 'solutions' : 'ai'

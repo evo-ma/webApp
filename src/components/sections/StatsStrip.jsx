@@ -30,7 +30,7 @@ function StatItem({ value, suffix, label, delay }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="text-center px-6 py-8 border-r border-white/[0.06] last:border-r-0"
+      className="text-center px-3 sm:px-5 py-5 sm:py-7 border-r border-white/[0.06] even:border-r-0 lg:even:border-r lg:last:border-r-0 border-b lg:border-b-0"
     >
       <div className="stat-num mb-1">
         {count}{suffix}

@@ -8,7 +8,7 @@ export function BaylingPage() {
   useSEO('ECHO Bayling — Bientôt', 'ECHO Bayling — la prochaine solution EVO Technologies. Bientôt disponible.')
 
   return (
-    <section className="relative z-10 min-h-screen flex items-center justify-center px-5">
+    <section className="relative z-10 min-h-[100svh] flex items-center justify-center px-4 sm:px-6 py-20">
       <div className="absolute inset-0 bg-gradient-radial from-orange/5 to-transparent pointer-events-none" />
 
       <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
@@ -75,8 +75,8 @@ export function ECHOCard() {
             {/* Top accent */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange to-transparent" />
 
-            <div className="relative z-10 grid lg:grid-cols-[1fr_auto] gap-8 items-center p-8 md:p-10">
-              <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
+            <div className="relative z-10 grid lg:grid-cols-[1fr_auto] gap-6 items-start lg:items-center p-5 sm:p-8 md:p-10">
+              <div className="grid grid-cols-[auto_1fr] gap-4 sm:gap-6 items-start">
                 {/* Logo mark */}
                 <div className="w-16 h-16 rounded-2xl bg-orange/10 border border-orange/25 flex items-center justify-center flex-shrink-0">
                   <Globe2 size={28} className="text-orange" />
@@ -85,7 +85,7 @@ export function ECHOCard() {
                 <div>
                   {/* Title */}
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="font-display font-black text-3xl md:text-4xl tracking-widest">
+                    <span className="font-display font-black text-2xl sm:text-3xl md:text-4xl tracking-widest">
                       <span className="text-orange">E</span>
                       <span className="text-white/50">.</span>
                       <span className="text-white">C</span>
@@ -112,7 +112,7 @@ export function ECHOCard() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {['Microsoft Teams', 'AudioCodes SBC', 'ISO 27001', 'Hébergé au Maroc'].map(tag => (
+                   {['Microsoft Teams', 'AudioCodes SBC', 'ISO 27001', 'Hébergé au Maroc'].map(tag => (
                       <span key={tag} className={`text-xs px-2.5 py-1 rounded-full border font-medium ${
                         ['Microsoft Teams', 'AudioCodes SBC'].includes(tag)
                           ? 'bg-orange/10 border-orange/25 text-orange'
@@ -124,7 +124,7 @@ export function ECHOCard() {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-row lg:flex-col gap-3 flex-shrink-0">
+              <div className="flex flex-row lg:flex-col gap-2 sm:gap-3 flex-shrink-0 mt-2 lg:mt-0">
                 <Link to="/solutions/echo" className="btn-primary whitespace-nowrap">
                   <ArrowRight size={15} /> {t('home.discover_echo')}
                 </Link>

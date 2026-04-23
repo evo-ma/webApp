@@ -19,7 +19,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="relative z-10 pt-28 pb-20 px-5 md:px-10">
+      <section className="relative z-10 pt-24 pb-16 px-4 sm:px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
 
           <FadeIn className="max-w-3xl mb-20">
@@ -85,7 +85,7 @@ function PlaceholderPage({ titleKey, descKey, emoji = '🚧' }) {
   return (
     <section className="relative z-10 min-h-screen flex items-center justify-center px-5">
       <div className="text-center max-w-md">
-        <div className="text-5xl mb-6">{emoji}</div>
+        <div className="text-4xl mb-5">{emoji}</div>
         <h1 className="font-display font-bold text-3xl text-white mb-4">{t(titleKey)}</h1>
         <p className="text-white/40 mb-8">{t(descKey)}</p>
         <Link to="/" className="btn-primary justify-center">

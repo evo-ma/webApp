@@ -34,7 +34,7 @@ export default function SolutionsGrid() {
               <FadeInItem key={key}>
                 <Link
                   to={path}
-                  className="group flex flex-col h-full bg-dark p-8 hover:bg-orange/[0.03] transition-colors duration-300 relative overflow-hidden"
+                  className="group flex flex-col h-full bg-dark p-5 sm:p-8 hover:bg-orange/[0.03] transition-colors duration-300 relative overflow-hidden"
                 >
                   <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="feat-icon group-hover:bg-orange/10 group-hover:border-orange/30 transition-all duration-300">

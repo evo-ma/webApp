@@ -95,7 +95,7 @@ export default function ProductPage({
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative z-10 pt-28 pb-20 px-5 md:px-10">
+      <section className="relative z-10 pt-24 pb-12 px-4 sm:px-6 md:px-10">
         {/* Glow */}
         <div className={`absolute inset-0 bg-gradient-radial ${ac.glow} to-transparent pointer-events-none`} />
 
@@ -116,7 +116,7 @@ export default function ProductPage({
             </Link>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left */}
             <div>
               <motion.div
@@ -139,7 +139,7 @@ export default function ProductPage({
                 <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center flex-shrink-0 ${ac.icon}`}>
                   {Icon && <Icon size={26} />}
                 </div>
-                <h1 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight tracking-tight">
+                <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-5xl text-white leading-tight tracking-tight">
                   {name}
                 </h1>
               </motion.div>
@@ -227,7 +227,7 @@ export default function ProductPage({
       {useCases.length > 0 && (
         <section className="section border-t border-white/[0.04]">
           <div className="container-xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div>
                 <div className={`section-tag ${ac.tag}`}>{t('common.use_cases')}</div>
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4 leading-tight tracking-tight">
@@ -298,7 +298,7 @@ function DefaultHeroCard({ name, Icon, ac }) {
   return (
     <div className="relative">
       <div className={`absolute -inset-4 bg-gradient-radial ${ac.glow} to-transparent rounded-3xl blur-xl pointer-events-none`} />
-      <div className="relative card shimmer-line p-8 flex flex-col items-center justify-center min-h-64 text-center gap-4">
+      <div className="relative card shimmer-line p-6 sm:p-8 flex flex-col items-center justify-center min-h-52 sm:min-h-64 text-center gap-4">
         <div className={`w-20 h-20 rounded-3xl border-2 flex items-center justify-center ${ac.icon}`}>
           {Icon && <Icon size={36} />}
         </div>

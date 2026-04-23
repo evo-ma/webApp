@@ -21,7 +21,7 @@ export default function DeploymentSteps() {
   return (
     <section className="section border-t border-white/[0.04] bg-white/[0.01]">
       <div className="container-xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
           {/* Steps */}
           <div>
@@ -58,7 +58,7 @@ export default function DeploymentSteps() {
           </div>
 
           {/* Options grid */}
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {OPTIONS.map(({ icon: Icon, key, descKey }) => (
               <FadeInItem key={key}>
                 <div className="card card-hover p-6 group h-full">

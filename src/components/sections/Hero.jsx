@@ -13,9 +13,9 @@ export default function Hero() {
   const { t } = useTranslation()
 
   return (
-    <section className="relative z-10 min-h-screen flex items-center pt-20 pb-16 px-5 md:px-10">
+    <section className="relative z-10 min-h-[100svh] flex items-center pt-20 pb-10 px-4 sm:px-6 md:px-10">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left — copy */}
           <div>
@@ -30,7 +30,7 @@ export default function Hero() {
             {/* Title */}
             <motion.h1
               {...fadeUp(0.2)}
-              className="font-display font-bold text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.05] tracking-tight mb-6"
+              className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] leading-[1.05] tracking-tight mb-5"
             >
               <span className="block text-white">{t('home.title1')}</span>
               <span className="block text-gradient">{t('home.title2')}</span>

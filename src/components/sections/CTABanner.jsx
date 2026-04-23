@@ -14,7 +14,7 @@ export default function CTABanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden border border-white/[0.07] bg-gradient-to-br from-navy-950 via-dark-card to-dark-card p-10 md:p-16 text-center"
+          className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.07] bg-gradient-to-br from-navy-950 via-dark-card to-dark-card p-6 sm:p-10 md:p-16 text-center"
         >
           {/* Glow */}
           <div className="absolute inset-0 bg-gradient-radial from-orange/8 to-transparent pointer-events-none" />
@@ -24,7 +24,7 @@ export default function CTABanner() {
             <div className="section-tag justify-center mb-5">
               {t('common.free_consultation')}
             </div>
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4 leading-tight">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-5xl text-white mb-4 leading-tight">
               {t('home.cta_title')}
             </h2>
             <p className="text-white/45 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed">

@@ -8,11 +8,11 @@ export default function Footer() {
 
   return (
     <footer className="relative z-10 bg-navy-950/80 border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-10 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-10">
 
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link to="/" className="inline-block mb-4">
               <img src="/logo.avif" alt="EVO Technologies" className="h-10"
                 onError={e => { e.target.src = '/logo.png' }} />

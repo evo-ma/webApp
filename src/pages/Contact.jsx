@@ -30,7 +30,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="relative z-10 min-h-screen pt-28 pb-20 px-5 md:px-10">
+    <section className="relative z-10 pt-24 pb-16 px-4 sm:px-6 md:px-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -41,7 +41,7 @@ export default function ContactPage() {
           className="mb-14"
         >
           <div className="section-tag">{t('nav.contact')}</div>
-          <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4 leading-tight tracking-tight">
+          <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-tight tracking-tight">
             {t('contact.title')}
           </h1>
           <p className="text-white/40 text-lg max-w-xl leading-relaxed">
@@ -49,7 +49,7 @@ export default function ContactPage() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-12">
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -58,13 +58,13 @@ export default function ContactPage() {
             className="lg:col-span-3"
           >
             {sent ? (
-              <div className="card p-10 text-center">
+              <div className="card p-6 sm:p-10 text-center">
                 <CheckCircle2 size={48} className="text-green-400 mx-auto mb-4" />
                 <h3 className="font-display font-bold text-xl text-white mb-2">{t('contact.sent_title')}</h3>
                 <p className="text-white/45 text-sm">{t('contact.sent_sub')}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="card p-8 space-y-5">
+              <form onSubmit={handleSubmit} className="card p-5 sm:p-8 space-y-4 sm:space-y-5">
                 {/* Type selector */}
                 <div className="flex gap-2 p-1 bg-white/[0.03] rounded-xl border border-white/[0.06]">
                   {[

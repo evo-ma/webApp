@@ -21,7 +21,7 @@ export default function AIShowcase() {
       <div className="container-xl">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          <FadeIn className="lg:sticky lg:top-28">
+          <FadeIn className="lg:sticky lg:top-28 mb-8 lg:mb-0">
             <div className="section-tag">{t('nav.ai')}</div>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight tracking-tight mb-5">
               {t('home.ai_title')}

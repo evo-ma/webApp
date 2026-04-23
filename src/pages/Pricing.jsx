@@ -14,7 +14,7 @@ export default function PricingPage() {
 
   return (
     <>
-      <section className="relative z-10 pt-28 pb-20 px-5 md:px-10 text-center">
+      <section className="relative z-10 pt-24 pb-12 px-4 sm:px-6 md:px-10 text-center">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="section-tag justify-center">{t('nav.pricing')}</div>
@@ -36,7 +36,7 @@ export default function PricingPage() {
               return (
                 <motion.div key={planKey} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={`relative card p-8 flex flex-col ${highlight ? 'border-orange/30 bg-gradient-to-b from-orange/5 to-transparent' : ''}`}>
+                  className={`relative card p-5 sm:p-8 flex flex-col ${highlight ? 'border-orange/30 bg-gradient-to-b from-orange/5 to-transparent' : ''}`}>
                   {highlight && <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange to-transparent" />}
                   {highlight && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold bg-orange text-white px-3 py-1 rounded-full">

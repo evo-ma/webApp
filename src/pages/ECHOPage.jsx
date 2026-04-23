@@ -145,7 +145,7 @@ export default function ECHOPage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative z-10 pt-28 pb-10 px-5 md:px-10">
+      <section className="relative z-10 pt-24 pb-8 px-4 sm:px-6 md:px-10">
         <div className="absolute inset-0 bg-gradient-radial from-orange/6 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto">
 
@@ -167,7 +167,7 @@ export default function ECHOPage() {
 
           {/* Title */}
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.15 }}
-            className="font-display font-bold text-5xl md:text-7xl leading-[1.02] tracking-tight mb-4">
+            className="font-display font-bold text-5xl sm:text-6xl md:text-7xl leading-[1.02] tracking-tight mb-4">
             <span className="text-gradient">ECHO</span>
           </motion.h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}
@@ -215,7 +215,7 @@ export default function ECHOPage() {
       </section>
 
       {/* ── ECHO FEATURED CARD ────────────────────────────────────────────── */}
-      <section className="relative z-10 px-5 md:px-10 pb-10">
+      <section className="relative z-10 px-4 sm:px-6 md:px-10 pb-8">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6 }}
@@ -234,9 +234,9 @@ export default function ECHOPage() {
             <div className="grid lg:grid-cols-[1fr_400px]">
 
               {/* Left */}
-              <div className="p-8 md:p-12 lg:border-r border-white/[0.06] flex flex-col justify-between gap-8">
+              <div className="p-5 sm:p-8 md:p-12 lg:border-r border-white/[0.06] flex flex-col justify-between gap-6 sm:gap-8">
                 <div>
-                  <div className="font-display font-black text-6xl md:text-7xl tracking-widest leading-none mb-3">
+                  <div className="font-display font-black text-4xl sm:text-6xl md:text-7xl tracking-widest leading-none mb-3">
                     <span className="text-orange">E</span>
                     <span className="text-white/60">.</span>
                     <span className="text-white">C</span>
@@ -279,7 +279,7 @@ export default function ECHOPage() {
               </div>
 
               {/* Right — feature list with tooltip */}
-              <div className="p-6 md:p-8 relative">
+              <div className="p-5 sm:p-6 md:p-8 relative">
                 <div className="text-[10px] font-bold tracking-widest uppercase text-white/20 mb-4 pb-3 border-b border-white/[0.06]">
                   {t('echo.included')}
                 </div>
@@ -338,7 +338,7 @@ export default function ECHOPage() {
               const c = CARD_COLORS[color]
               return (
                 <FadeInItem key={i}>
-                  <div className={`group relative bg-dark-card p-8 flex flex-col h-full transition-all duration-200 ${c.hover}`}>
+                  <div className={`group relative bg-dark-card p-5 sm:p-8 flex flex-col h-full transition-all duration-200 ${c.hover}`}>
                     {/* Orange top line on hover */}
                     <div className={`absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${c.top}`} />
 
@@ -375,7 +375,7 @@ export default function ECHOPage() {
           </FadeInStagger>
 
           {/* Hosting badges */}
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3 mt-6 sm:mt-8">
             {[
               { icon: Server,  label: 'Datacenter Tier III Maroc' },
               { icon: Shield,  label: 'Déploiement 72h' },

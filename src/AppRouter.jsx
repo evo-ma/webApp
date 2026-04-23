@@ -31,10 +31,10 @@ const SOL_ICONS = { Globe2, Layers }
 function ProduitsIndexPage() {
   const { t } = useTranslation()
   return (
-    <section className="relative z-10 pt-28 pb-20 px-5 md:px-10">
+    <section className="relative z-10 pt-24 pb-16 px-4 sm:px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="section-tag">{t('nav.produits')}</div>
-        <h1 className="font-display font-bold text-5xl text-white mb-4 leading-tight tracking-tight">
+        <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-tight tracking-tight">
           {t('home.solutions_title')}
         </h1>
         <p className="text-white/40 text-lg mb-14 max-w-xl">{t('home.solutions_sub')}</p>
@@ -59,7 +59,7 @@ function ProduitsIndexPage() {
           {AI_PRODUCTS.map(({ key, path, icon }) => {
             const Icon = AI_ICONS[icon]
             return (
-              <Link key={key} to={path} className="card card-hover p-8 group flex gap-5 items-start">
+              <Link key={key} to={path} className="card card-hover p-5 sm:p-8 group flex gap-5 items-start">
                 <div className="w-12 h-12 rounded-2xl bg-orange/5 border border-orange/20 text-orange flex items-center justify-center flex-shrink-0 group-hover:bg-orange/10">{Icon && <Icon size={22}/>}</div>
                 <div>
                   <h3 className="font-semibold text-base text-white mb-1.5">{t(`ai.${key}.name`)}</h3>
@@ -78,16 +78,16 @@ function ProduitsIndexPage() {
 function SolutionsIndexPage() {
   const { t } = useTranslation()
   return (
-    <section className="relative z-10 pt-28 pb-20 px-5 md:px-10">
+    <section className="relative z-10 pt-24 pb-16 px-4 sm:px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="section-tag">{t('nav.solutions')}</div>
-        <h1 className="font-display font-bold text-5xl text-white mb-4 leading-tight tracking-tight">Nos Solutions</h1>
+        <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-tight tracking-tight">Nos Solutions</h1>
         <p className="text-white/40 text-lg mb-14 max-w-xl">Des solutions complètes, hébergées et opérées par EVO au Maroc.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {SOLUTIONS_EVO.map(({ key, path, icon, coming }) => {
             const Icon = SOL_ICONS[icon]
             return (
-              <Link key={key} to={path} className={`card card-hover p-8 group flex gap-5 items-start ${coming ? 'opacity-60 pointer-events-none' : ''}`}>
+              <Link key={key} to={path} className={`card card-hover p-5 sm:p-8 group flex gap-5 items-start ${coming ? 'opacity-60 pointer-events-none' : ''}`}>
                 <div className="w-12 h-12 rounded-2xl bg-orange/5 border border-orange/20 text-orange flex items-center justify-center flex-shrink-0">{Icon && <Icon size={22}/>}</div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
