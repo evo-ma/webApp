@@ -408,13 +408,13 @@ export default function ECHOPage() {
 
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {WHY_KEYS.map(({ icon: Icon, key }) => (
-              <FadeInItem key={title}>
+              <FadeInItem key={key}>
                 <div className="card card-hover p-7 group h-full">
                   <div className="feat-icon mb-5 group-hover:bg-orange/10 group-hover:border-orange/30 transition-all duration-300">
                     <Icon size={18} />
                   </div>
-                  <h3 className="font-display font-semibold text-base text-white mb-2">{title}</h3>
-                  <p className="text-sm text-white/35 leading-relaxed">{desc}</p>
+                  <h3 className="font-display font-semibold text-base text-white mb-2">{t(`echo.why.${key}.title`)}</h3>
+                  <p className="text-sm text-white/35 leading-relaxed">{t(`echo.why.${key}.desc`)}</p>
                 </div>
               </FadeInItem>
             ))}
