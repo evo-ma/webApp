@@ -27,7 +27,7 @@ export default function Layout() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          onAnimationComplete={() => window.scrollTo(0, 0)}
+          onAnimationStart={() => window.scrollTo(0, 0)}
         >
           <Outlet />
         </motion.main>

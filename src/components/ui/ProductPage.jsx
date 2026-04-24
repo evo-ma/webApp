@@ -47,50 +47,13 @@ export default function ProductPage({
 
   useSEO(name, `${desc} — ${short} | EVO Technologies`)
 
-  const accentClasses = {
-    orange: {
-      badge:   'bg-orange/10 border-orange/25 text-orange',
-      dot:     'bg-orange',
-      tag:     'text-orange',
-      tagLine: 'bg-orange',
-      icon:    'bg-orange/5 border-orange/20 text-orange',
-      glow:    'from-orange/8',
-      num:     'bg-orange/10 border-orange/25 text-orange',
-      step:    'from-orange/30',
-    },
-    violet: {
-      badge:   'bg-violet-500/10 border-violet-500/25 text-violet-400',
-      dot:     'bg-violet-400',
-      tag:     'text-violet-400',
-      tagLine: 'bg-violet-400',
-      icon:    'bg-violet-500/5 border-violet-500/20 text-violet-400',
-      glow:    'from-violet-500/8',
-      num:     'bg-violet-500/10 border-violet-500/25 text-violet-400',
-      step:    'from-violet-500/30',
-    },
-    sky: {
-      badge:   'bg-sky-500/10 border-sky-500/25 text-sky-400',
-      dot:     'bg-sky-400',
-      tag:     'text-sky-400',
-      tagLine: 'bg-sky-400',
-      icon:    'bg-sky-500/5 border-sky-500/20 text-sky-400',
-      glow:    'from-sky-500/8',
-      num:     'bg-sky-500/10 border-sky-500/25 text-sky-400',
-      step:    'from-sky-500/30',
-    },
-    emerald: {
-      badge:   'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
-      dot:     'bg-emerald-400',
-      tag:     'text-emerald-400',
-      tagLine: 'bg-emerald-400',
-      icon:    'bg-emerald-500/5 border-emerald-500/20 text-emerald-400',
-      glow:    'from-emerald-500/8',
-      num:     'bg-emerald-500/10 border-emerald-500/25 text-emerald-400',
-      step:    'from-emerald-500/30',
-    },
-  }[accentColor] || accentClasses
-
-  const ac = accentClasses[accentColor] ?? accentClasses.orange
+  const ACCENT = {
+    orange:  { glow: 'from-orange/8',      badge: 'bg-orange/10 border-orange/25 text-orange',               dot: 'bg-orange',      tag: 'text-orange',      icon: 'bg-orange/5 border-orange/20 text-orange',               num: 'bg-orange/10 border-orange/25 text-orange',       step: 'from-orange/30'       },
+    violet:  { glow: 'from-violet-500/8',  badge: 'bg-violet-500/10 border-violet-500/25 text-violet-400',   dot: 'bg-violet-400',  tag: 'text-violet-400',  icon: 'bg-violet-500/5 border-violet-500/20 text-violet-400',   num: 'bg-violet-500/10 border-violet-500/25 text-violet-400', step: 'from-violet-500/30' },
+    sky:     { glow: 'from-sky-500/8',     badge: 'bg-sky-500/10 border-sky-500/25 text-sky-400',             dot: 'bg-sky-400',     tag: 'text-sky-400',     icon: 'bg-sky-500/5 border-sky-500/20 text-sky-400',             num: 'bg-sky-500/10 border-sky-500/25 text-sky-400',     step: 'from-sky-500/30'    },
+    emerald: { glow: 'from-emerald-500/8', badge: 'bg-emerald-500/10 border-emerald-500/25 text-emerald-400', dot: 'bg-emerald-400', tag: 'text-emerald-400', icon: 'bg-emerald-500/5 border-emerald-500/20 text-emerald-400', num: 'bg-emerald-500/10 border-emerald-500/25 text-emerald-400', step: 'from-emerald-500/30' },
+  }
+  const ac = ACCENT[accentColor] ?? ACCENT.orange
 
   return (
     <>
