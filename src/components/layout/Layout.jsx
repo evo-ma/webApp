@@ -10,10 +10,8 @@ export default function Layout() {
 
   return (
     <>
-      {/* Animated star canvas - fixed behind everything */}
       <canvas id="stars-canvas" aria-hidden="true" />
 
-      {/* Global nebula blobs — clamped so they never cause horizontal overflow */}
       <div aria-hidden="true" className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="nebula w-[min(600px,100vw)] h-[min(600px,100vw)] bg-gradient-radial from-orange/6 to-transparent top-[-200px] right-[-200px]" />
         <div className="nebula w-[min(500px,80vw)] h-[min(500px,80vw)] bg-gradient-radial from-navy/20 to-transparent bottom-0 left-[-150px]" />
@@ -27,8 +25,9 @@ export default function Layout() {
           key={location.pathname}
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -6 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+          onAnimationComplete={() => window.scrollTo(0, 0)}
         >
           <Outlet />
         </motion.main>

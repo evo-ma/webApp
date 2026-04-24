@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Calendar, ArrowRight, ArrowLeft, CheckCircle2,
+import { Calendar, ArrowRight, ArrowLeft, CheckCircle2, Loader2,
   Headphones, BarChart3, PhoneForwarded, Mic,
   MessageSquare, UserCheck, Sparkles, Bot,
   Building2, Mail, Clock, Phone } from 'lucide-react'
 import { useSEO } from '@/hooks/useSEO'
+import { useWeb3Forms } from '@/hooks/useWeb3Forms'
 
 const PRODUCTS = [
   { id: 'contact_center',     icon: Headphones,    key: 'contact_centre'      },
@@ -41,7 +42,10 @@ export default function DemoPage() {
   const [done, setDone] = useState(false)
   const [form, setForm] = useState({ products: [], name: '', company: '', size: '', email: '', phone: '', day: '', time: '', notes: '' })
 
+  const { submit } = useWeb3Forms()
   const STEPS = t('demo.steps', { returnObjects: true })
+  const [loading, setLoading] = useState(false)
+  const [error,   setError]   = useState('')
 
   const go = (n) => { setDir(n > step ? 1 : -1); setStep(n) }
 
@@ -52,13 +56,28 @@ export default function DemoPage() {
   ][step]
 
   const handleSubmit = async () => {
+    setLoading(true)
+    setError('')
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || '/api'}/demo`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form),
+      await submit({
+        subject:   `[EVO.MA] Demande de démo — ${form.name} / ${form.company}`,
+        Nom:       form.name,
+        Entreprise: form.company,
+        Email:     form.email,
+        Téléphone: form.phone  || '—',
+        Effectif:  form.size,
+        Solutions: Array.isArray(form.products) ? form.products.join(', ') : form.products,
+        Date:      form.day,
+        Heure:     form.time,
+        Notes:     form.notes || '—',
+        email:     form.email,
       })
-      const data = await res.json()
-      if (data.ok) setDone(true)
-    } catch { setDone(true) }
+      setDone(true)
+    } catch {
+      setError(t('common.error_retry') || 'Une erreur est survenue. Réessayez.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const toggleProduct = (id) => setForm(f => ({
@@ -233,6 +252,12 @@ export default function DemoPage() {
             </motion.div>
           </AnimatePresence>
 
+          {error && (
+            <div className="mx-5 sm:mx-8 mb-2 flex items-center gap-2 text-red-400 text-sm bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
+              <span className="flex-shrink-0">⚠</span> {error}
+            </div>
+          )}
+
           <div className="px-5 sm:px-8 pb-6 sm:pb-8 flex items-center justify-between gap-3">
             {step > 0
               ? <button onClick={() => go(step - 1)} className="btn-secondary"><ArrowLeft size={15} /> {t('common.back')}</button>
@@ -243,8 +268,12 @@ export default function DemoPage() {
                   className={`btn-primary transition-opacity ${!canNext ? 'opacity-30 cursor-not-allowed' : ''}`}>
                   {t('common.next')} <ArrowRight size={15} />
                 </button>
-              : <button onClick={handleSubmit} className="btn-primary px-8">
-                  <CheckCircle2 size={15} /> {t('common.confirm_demo')}
+              : <button onClick={handleSubmit} disabled={loading}
+                  className="btn-primary px-8 disabled:opacity-60 disabled:cursor-not-allowed">
+                  {loading
+                    ? <><Loader2 size={15} className="animate-spin" /> {t('common.sending') || 'Envoi...'}</>
+                    : <><CheckCircle2 size={15} /> {t('common.confirm_demo')}</>
+                  }
                 </button>
             }
           </div>

@@ -12,16 +12,16 @@ import {
 import { cn, TELEPHONY, AI_PRODUCTS, SOLUTIONS_EVO, LANGUAGES } from '@/lib/utils'
 
 const TEL_ICONS = { Headphones, PhoneForwarded, LayoutDashboard, Mic, Monitor, Users, FileText, BarChart3 }
-const AI_ICONS = { Bot, MessageSquare, UserCheck, Sparkles }
+const AI_ICONS  = { Bot, MessageSquare, UserCheck, Sparkles }
 const SOL_ICONS = { Globe2, Layers }
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled,   setScrolled]   = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
-  const [langOpen, setLangOpen] = useState(false)
+  const [langOpen,   setLangOpen]   = useState(false)
   const menuRef = useRef(null)
 
   useEffect(() => {
@@ -48,23 +48,23 @@ export default function Navbar() {
   const changeLanguage = (code) => {
     const lang = LANGUAGES.find(l => l.code === code)
     i18n.changeLanguage(code)
-    document.documentElement.dir = lang.dir
+    document.documentElement.dir  = lang.dir
     document.documentElement.lang = code
     setLangOpen(false)
   }
 
   const isActive = (path) => location.pathname.startsWith(path)
-  const toggle = (menu) => setActiveMenu(activeMenu === menu ? null : menu)
+  const toggle   = (menu) => setActiveMenu(activeMenu === menu ? null : menu)
 
   return (
     <header
       ref={menuRef}
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled ? 'bg-dark/90 backdrop-blur-xl border-b border-white/[0.06] shadow-xl' : 'bg-transparent'
       )}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 overflow-x-hidden">
+      <nav className="max-w-7xl mx-auto px-5 md:px-10">
         <div className="flex items-center justify-between h-16">
 
           <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
@@ -77,8 +77,8 @@ export default function Navbar() {
             <NavDropdownBtn label={t('nav.solutions')} active={isActive('/solutions') || activeMenu === 'solutions'} open={activeMenu === 'solutions'} onClick={() => toggle('solutions')} />
             {[
               { to: '/pricing', label: t('nav.pricing') },
-              { to: '/about', label: t('nav.about') },
-              { to: '/contact', label: t('nav.contact') },
+              { to: '/about',   label: t('nav.about')   },
+              { to: '/contact', label: t('nav.contact')  },
             ].map(({ to, label }) => (
               <Link key={to} to={to} className={cn('px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200', location.pathname === to ? 'text-white bg-white/5' : 'text-white/55 hover:text-white hover:bg-white/5')}>
                 {label}
@@ -97,7 +97,7 @@ export default function Navbar() {
                 {langOpen && (
                   <motion.div initial={{ opacity: 0, y: 8, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }} transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-2 w-32 bg-dark-card border border-white/10 rounded-xl overflow-hidden shadow-xl z-50">
+                    className="absolute right-0 top-full mt-2 w-32 bg-dark-card border border-white/10 rounded-xl overflow-hidden shadow-xl">
                     {LANGUAGES.map(lang => (
                       <button key={lang.code} onClick={() => changeLanguage(lang.code)}
                         className={cn('w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors duration-150',
@@ -171,7 +171,7 @@ export default function Navbar() {
                       <Link key={key} to={path}
                         className={cn('group relative flex items-start gap-4 p-5 rounded-2xl border transition-all duration-200',
                           coming ? 'border-white/[0.06] bg-white/[0.02] opacity-60 cursor-default pointer-events-none'
-                            : 'border-orange/20 bg-orange/[0.03] hover:bg-orange/[0.06] hover:border-orange/35')}>
+                                 : 'border-orange/20 bg-orange/[0.03] hover:bg-orange/[0.06] hover:border-orange/35')}>
                         {!coming && <div className="absolute top-0 left-0 right-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-orange/50 to-transparent" />}
                         <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 border',
                           coming ? 'bg-white/[0.04] border-white/10 text-white/30' : 'bg-orange/10 border-orange/25 text-orange group-hover:bg-orange/15')}>
@@ -207,7 +207,7 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25 }}
-            className="lg:hidden bg-dark/98 backdrop-blur-xl border-t border-white/[0.06] overflow-hidden w-full">
+            className="lg:hidden bg-dark/98 backdrop-blur-xl border-t border-white/[0.06] overflow-hidden">
             <div className="px-5 py-6 space-y-1">
               <MobileSection title={t('nav.produits')}>
                 <div className="pl-1 pt-1">
@@ -248,8 +248,8 @@ export default function Navbar() {
               <div className="pt-2 border-t border-white/[0.06] space-y-1">
                 {[
                   { to: '/pricing', label: t('nav.pricing') },
-                  { to: '/about', label: t('nav.about') },
-                  { to: '/contact', label: t('nav.contact') },
+                  { to: '/about',   label: t('nav.about')   },
+                  { to: '/contact', label: t('nav.contact')  },
                 ].map(({ to, label }) => (
                   <Link key={to} to={to} className="block px-3 py-2.5 text-sm text-white/60 hover:text-white rounded-lg hover:bg-white/5 transition-colors">{label}</Link>
                 ))}
