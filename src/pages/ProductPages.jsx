@@ -5,7 +5,7 @@ import {
   Bot, MessageSquare, UserCheck, Sparkles,
   PhoneCall, GitBranch, Eye, Shield, Archive,
   SlidersHorizontal, RefreshCw, Inbox, PieChart,
-  Brain, Languages, TrendingUp,
+  Brain, Languages, TrendingUp, Clock,
   BookOpen, Zap, Search, Bell, Star, Globe,
   Activity, Lock, Download, ListFilter as Filter,
 } from 'lucide-react'
@@ -377,6 +377,3 @@ export function AIAnalyticsPage() {
     />
   )
 }
-
-// Need Clock import for AutoAttendant
-import { Clock } from 'lucide-react'

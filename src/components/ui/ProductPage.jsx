@@ -258,6 +258,7 @@ export default function ProductPage({
 
 /* Default hero card when no custom one is provided */
 function DefaultHeroCard({ name, Icon, ac }) {
+  const { t } = useTranslation()
   return (
     <div className="relative">
       <div className={`absolute -inset-4 bg-gradient-radial ${ac.glow} to-transparent rounded-3xl blur-xl pointer-events-none`} />
@@ -271,7 +272,7 @@ function DefaultHeroCard({ name, Icon, ac }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs text-green-400 bg-green-500/10 border border-green-500/15 rounded-full px-3 py-1">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          {t('product_page.active')}
+          Actif & opérationnel
         </div>
       </div>
     </div>
